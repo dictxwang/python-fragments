@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wesocket-client</title>
+    <script type="text/javascript">
+        function WebSocketTest() {
+            if ("WebSocket" in window) {
+                // 创建websocket
+                var ws = new WebSocket("ws://localhost:40001");
+                // 连接建立后的回调函数
+                ws.onopen = function () {
+                    ws.send("Js client open");
+                    for (let i = 0; i < 10; i++) {
+                        ws.send(`Js message index ${i}`);
+                    }
+                    // ws.close();
+                };
+
+                // 接收到服务器消息后的回调函数
+                ws.onmessage = function (evt) {
+                    var received_msg = evt.data;
+                    if (received_msg.indexOf("sorry") == -1) {
+                        console.log(`receive message: ${received_msg}`)
+                    }
+                };
+                // 连接关闭后的回调函数
+                ws.onclose = function () {
+                    // 关闭 websocket
+                    console.log("websocket closed...");
+                };
+            } else {
+                // 浏览器不支持 WebSocket
+                console.log("Browser not support websocket");
+            }
+        }
+        WebSocketTest();
+    </script>
+</head>
+<body>
+</body>
+</html>
