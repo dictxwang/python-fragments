@@ -6,6 +6,9 @@ import threading
 import time
 import asyncio
 
+'''
+比较同步模式和异步模式下，生产者消费者模型的耗时情况
+'''
 
 def original_producer_consumer(tcount):
 
