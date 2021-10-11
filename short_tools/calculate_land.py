@@ -85,4 +85,9 @@ if __name__ == '__main__':
     arp = 0.0588
     equal_loan_payment(principal, period, arp)
 
+    principal = 950000
+    period = 200
+    arp = 0.0588
+    equal_loan_payment(principal, period, arp)
+
     equal_principal_payment(principal, period, arp)
