@@ -9,7 +9,7 @@ from PIL import Image, ImageDraw, ImageFont
 import os
 
 
-def create_text_and_pic_watermark(src, dest, wm_pic, wm_text="Xiao Yaoyao"):
+def create_text_and_pic_watermark(src, dest, wm_pic, wm_text="YouName"):
     '''
     分别在图片的上中下三个位置加水印
     :param src:
@@ -78,12 +78,12 @@ def add_wartermark_all_image(src, dest, wm_pic, wm_text):
 
 
 if __name__ == '__main__':
-    # src = "/Users/wangqiang/MyDocuments/yicheng/origin0524/01.jpeg"
-    # dest = "/Users/wangqiang/MyDocuments/yicheng/watermark0524/01_wm.png"
+    # src = "/Users/dictxwang/MyDocuments/origin0524/01.jpeg"
+    # dest = "/Users/dictxwang/MyDocuments/watermark0524/01_wm.png"
     # wm_pic = "data/pics/djs02.png"
     # create_text_and_pic_watermark(src, dest, wm_pic, wm_text="YanHongGuan@douban")
 
-    src = "/Users/wangqiang/MyDocuments/yicheng/origin0530"
-    dest = "/Users/wangqiang/MyDocuments/yicheng/watermark0530"
+    src = "/Users/dictxwang/MyDocuments/origin0530"
+    dest = "/Users/dictxwang/MyDocuments/watermark0530"
     wm_pic = "data/pics/djs02.png"
-    add_wartermark_all_image(src, dest, wm_pic, wm_text="YanHongGuan@douban")
+    add_wartermark_all_image(src, dest, wm_pic, wm_text="xxx@douban")
