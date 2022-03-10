@@ -60,3 +60,10 @@ if __name__ == "__main__":
     c10 = [1, 2, 4, 2, 3, 'a', 'b', 'd', 'b', 3]
     print(collections.Counter(c10))
     print(collections.Counter(c10).get('a'))
+
+    # 字典序的map（按照写入顺序存储）
+    c11 = collections.OrderedDict()
+    c11["z"] = 26
+    c11["b"] = 2
+    c11["f"] = 6
+    print(c11)  # OrderedDict([('z', 26), ('b', 2), ('f', 6)])
