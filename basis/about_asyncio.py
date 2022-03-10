@@ -8,6 +8,10 @@ import time
 import datetime
 import uuid
 
+'''
+require python3.8+
+'''
+
 
 def async_await_01():
     async def say_after(delay, what):
@@ -235,15 +239,15 @@ def asyncio_future_result_02():
 
 
 if __name__ == "__main__":
-    # async_await_01()
-    # async_await_02()
-    # async_await_03()
-    # async_await_04()
-    # async_await_gather()
-    # async_await_wait_for()
-    # running_loop()
-    # async_await_blocking_io()
-    # asyncio_producer_consumer()
-    # asyncio_task_callback()
-    # asyncio_future_result()
+    async_await_01()
+    async_await_02()
+    async_await_03()
+    async_await_04()
+    async_await_gather()
+    async_await_wait_for()
+    running_loop()
+    async_await_blocking_io()
+    asyncio_producer_consumer()
+    asyncio_task_callback()
+    asyncio_future_result()
     asyncio_future_result_02()
