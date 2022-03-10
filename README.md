@@ -1,7 +1,7 @@
 # python-fragments
 
 python相关的代码片段
-大部分可在python3.6运行，部分文件需要在python3.8+运行。
+大部分可在python3.6运行，少数代码需要在python3.8+运行。
 
 # python之禅
 执行命令： python -c 'import this'
