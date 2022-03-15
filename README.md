@@ -108,6 +108,12 @@ Namespaces are one honking great idea -- let's do more of those!
 
 [10、排序算法：归并排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_merge_sort.py)
 
+[11、图的遍历：BFS广度优先遍历](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_bfs.py)
+
+[12、图的遍历：DFS深度优先遍历](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_dfs.py)
+
+[13、查找算法：二分查找](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_search_binary.py)
+
 #### 三、扩展模块相关
 
 [1、folium包的地图应用](https://github.com/dictxwang/python-fragments/blob/main/open_modules/about_folium.py)
