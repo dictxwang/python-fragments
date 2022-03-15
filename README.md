@@ -98,6 +98,16 @@ Namespaces are one honking great idea -- let's do more of those!
 
 [5、搜索算法：Dijkstra最短路径算法](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_dijkstra.py)
 
+[6、排序算法：堆排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_heap_sort.py)
+
+[7、数据结构：堆的构建过程](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_make_heap.py)
+
+[8、排序算法：插入排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_insertion_sort.py)
+
+[9、排序算法：希尔排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_shell_sort.py)
+
+[10、排序算法：归并排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_merge_sort.py)
+
 #### 三、扩展模块相关
 
 [1、folium包的地图应用](https://github.com/dictxwang/python-fragments/blob/main/open_modules/about_folium.py)
