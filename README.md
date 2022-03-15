@@ -96,7 +96,7 @@ Namespaces are one honking great idea -- let's do more of those!
 
 [4、查找算法：KMP查找](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_search_kmp.py)
 
-[5、最短路径：Dijkstra算法](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_dijkstra.py)
+[5、搜索算法：Dijkstra最短路径算法](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_dijkstra.py)
 
 #### 三、扩展模块相关
 
