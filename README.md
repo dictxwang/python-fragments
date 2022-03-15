@@ -74,21 +74,31 @@ Namespaces are one honking great idea -- let's do more of those!
 
 [20、python执行shell命令的几种方法](https://github.com/dictxwang/python-fragments/blob/main/basis/about_runshell.py)
 
-[21、排序算法的实现（快排）](https://github.com/dictxwang/python-fragments/blob/main/basis/about_sort.py)
+[21、字符串处理及内置方法的使用](https://github.com/dictxwang/python-fragments/blob/main/basis/about_string.py)
 
-[22、字符串处理及内置方法的使用](https://github.com/dictxwang/python-fragments/blob/main/basis/about_string.py)
+[22、多线程实现生产者消费者模型（threading）](https://github.com/dictxwang/python-fragments/blob/main/basis/producer_consumer.py)
 
-[23、多线程实现生产者消费者模型（threading）](https://github.com/dictxwang/python-fragments/blob/main/basis/producer_consumer.py)
+[23、asyncio实现生产者消费者模型](https://github.com/dictxwang/python-fragments/blob/main/basis/producer_consumer_asyncio.py)
 
-[24、asyncio实现生产者消费者模型](https://github.com/dictxwang/python-fragments/blob/main/basis/producer_consumer_asyncio.py)
+[24、比较两种生产者与消费者模型（threading与asyncio）](https://github.com/dictxwang/python-fragments/blob/main/basis/producer_consumer_compare.py)
 
-[25、比较两种生产者与消费者模型（threading与asyncio）](https://github.com/dictxwang/python-fragments/blob/main/basis/producer_consumer_compare.py)
+[25、多进程实现生产者消费者模型（multiprocessing）](https://github.com/dictxwang/python-fragments/blob/main/basis/producer_consumer_process.py)
 
-[26、多进程实现生产者消费者模型（multiprocessing）](https://github.com/dictxwang/python-fragments/blob/main/basis/producer_consumer_process.py)
+[26、多进程共享内存的应用（Process和Manager）](https://github.com/dictxwang/python-fragments/blob/main/basis/producer_consumer_process_memery.py)
 
-[27、多进程共享内存的应用（Process和Manager）](https://github.com/dictxwang/python-fragments/blob/main/basis/producer_consumer_process_memery.py)
+#### 二、常用算法实现
 
-#### 二、扩展模块相关
+[1、排序算法：冒泡排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_bubble.py)
+
+[2、排序算法：快速排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_quick_sort.py)
+
+[3、查找算法：BruteForce暴力查找](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_search_bf.py)
+
+[4、查找算法：KMP查找](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_search_kmp.py)
+
+[5、最短路径：Dijkstra算法](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_dijkstra.py)
+
+#### 三、扩展模块相关
 
 [1、folium包的地图应用](https://github.com/dictxwang/python-fragments/blob/main/open_modules/about_folium.py)
 
