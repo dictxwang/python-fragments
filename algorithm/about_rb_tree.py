@@ -205,7 +205,7 @@ class RedBlackTree:
                 elif node_parent.get_right() == node:
                     node_parent.set_right(node_right)
 
-        # 3、只有左子节点或
+        # 3、只有左子节点
         if node_right is None and node_left is not None:
             # 3.1、没有父节点
             if node_parent is None:
