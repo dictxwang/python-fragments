@@ -14,7 +14,7 @@ def shell_sort(lst):
     gap = len(lst) // 2
     total_swap = 0
     while gap > 0:
-        for j in range(gap, len(lst)):
+        for j in range(gap, len(lst), gap):
             total_swap += 1
             key = lst[j]
             i = j - gap
