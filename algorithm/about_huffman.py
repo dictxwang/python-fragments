@@ -40,6 +40,9 @@ class HuffmanTree:
         self._root = Node(None, None)
         self.__build_tree(char_weights)
 
+    def get_root(self):
+        return self._root
+
     def __build_tree(self, char_weights):
         if len(char_weights) <= 1:
             return
