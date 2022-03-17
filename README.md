@@ -116,6 +116,8 @@ Namespaces are one honking great idea -- let's do more of those!
 
 [14、数据结构：二叉查找树的python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_rb_tree.py)
 
+[15、数据结构：Trie字典树的python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_trie.py)
+
 #### 三、扩展模块相关
 
 [1、folium包的地图应用](https://github.com/dictxwang/python-fragments/blob/main/open_modules/about_folium.py)
