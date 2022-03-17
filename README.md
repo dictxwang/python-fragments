@@ -86,7 +86,7 @@ Namespaces are one honking great idea -- let's do more of those!
 
 [26、多进程共享内存的应用（Process和Manager）](https://github.com/dictxwang/python-fragments/blob/main/basis/producer_consumer_process_memery.py)
 
-#### 二、常用算法实现
+#### 二、数据结构与算法
 
 [1、排序算法：冒泡排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_bubble.py)
 
