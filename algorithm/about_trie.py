@@ -20,6 +20,10 @@ class Node:
     def append_child(self, key, node):
         self._children[key] = node
 
+    def remove_child(self, key):
+        if key in self._children:
+            del self._children[key]
+
     def get_children(self):
         return self._children
 
@@ -68,7 +72,14 @@ class Trie:
             if len(last_node.get_children()) > 0:
                 # 如果还有子节点，直接返回
                 return
-            
+            if len(word) == 1:
+                # 从根节点移除即可
+                self._root.remove_child(word[0:1])
+                return
+            # 找到末尾字符的父节点
+            parent = self._root
+            for c in word[:len(word) - 1]:
+                parent = parent.get_child(c)
 
         if not word:
             return
