@@ -80,6 +80,9 @@ class Trie:
             parent = self._root
             for c in word[:len(word) - 1]:
                 parent = parent.get_child(c)
+            parent.remove_child(word[len(word) - 1: len(word)])
+            # 递归判断
+            remove_word(word[0:len(word) - 1], parent)
 
         if not word:
             return
@@ -95,7 +98,7 @@ class Trie:
             return
         # 将节点置为非单词
         node.set_is_word(is_word=False)
-
+        remove_word(word, node)
 
     def search(self, word) -> bool:
         """
@@ -152,14 +155,39 @@ class Trie:
             node = node.get_child(c)
         return find_words(prefix, node)
 
+    def get_all_words(self):
+        """
+        获取所有的单词
+        :return:
+        """
+        def find_words(prefix, node):
+            words = []
+            if node.get_is_word():
+                # 如果当前节点是词节点，假如返回列表
+                words.append(prefix + node.get_key())
+
+            # 递归处理子节点
+            for child in node.get_children().values():
+                words.extend(find_words(prefix + node.get_key(), child))
+            return words
+
+        words = []
+        # 循环根节点所有的子节点
+        for child in self._root.get_children().values():
+            words.extend(find_words("", child))
+        return words
+
 
 if __name__ == '__main__':
+
     trie = Trie()
     trie.insert("hello")
     trie.insert("world")
     trie.insert("I")
     trie.insert("like")
     trie.insert("programing")
+
+    print(trie.get_all_words())
 
     print(trie.search("world"))
     print(trie.search("I"))
@@ -178,3 +206,10 @@ if __name__ == '__main__':
     print(trie.get_words_start_with("zyx"))
     print(trie.get_words_start_with("likep"))
     print(trie.get_words_start_with("abcd"))
+
+    trie.remove("abcdef")
+    trie.remove("abcdefg")
+    print(trie.search("abcde"))
+    print(trie.search("abcdef"))
+
+    print(trie.get_all_words())
