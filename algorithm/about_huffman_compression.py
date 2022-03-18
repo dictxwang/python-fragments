@@ -4,6 +4,38 @@ __author__ = 'wangqiang'
 
 """
 基于哈夫曼编码实现压缩/解压缩
+一、压缩过程
+1、创建原文件的huffman树
+    （1）、逐个字节读取原文件，并将每个字节转换成整数
+    （2）、记录上一步中所有整数出现的次数
+    （3）、利用第2步产生的整数-次数序列生成huffman树
+2、将huffman写入压缩文件（直接通过压缩文件解压需要）
+    （1）、将huffman树序列化（生成字节序列huffman_bytes），并计算序列化后的字节长度（huffman_length）
+    （2）、将huffman_length转换成2个字节长度的字节序列写入压缩文件
+    （3）、将huffman_bytes写入压缩文件
+3、使用huffman树对原文件进行压缩
+    （1）、逐个字节读取原文件，并将每个字节转换成整数（value）
+    （2）、在huffman树中查找value对应的01编码（codes）
+    （3）、将所有的codes依次拼接，然后按照每8位切分，并将切分后的01编码转换成对应的10进制整数bytes，同时将bytes依次写入压缩文件
+    （4）、如果最后不足8位，在最后补0进行填充，并将填充后的01编码同样转换成对应的10进制整数bytes写入压缩文件
+    （5）、最后将上一步补0的数量（不需要补0是数量即为0），转换成bytes写入压缩文件结尾，压缩过程结束
+二、解压缩过程
+1、还原huffman数
+    （1）、读取前两个字节，还原出序列化后的huffman字节序列长度（huffman_length）
+    （2）、读取huffman_length长度的字节，并反序列化生成huffman树
+2、执行解压缩
+    （1）、继续分块（例如设置buffer长度为4096，提升解压速度）依次读取压缩文件，得到字节序列buf
+    （2）、每次完成分块读取以后，需要进一步判断是否需要读取出文件结尾的补0数
+        i、如果第（1）实际读取buf长度不足期望长度（buffer长度4096），表明文件已读取完成，此时需要对buf进行分段，利用最后一个字节计算出补0数量，结束第（2）步
+        ii、如果buf长度等于期望长度，继续读取2个字节长度，得到字节序列buf_more
+        iii、如果buf_more为空，说明在第（1）步已读取到文件末尾，此时执行和第i步相同的逻辑
+        iv、如果buf_more长度为1，说明正好读取到文件结尾，直接用buf_more计算出补0数量
+        v、如果buf_more长度为2，说明还未读取到文件结尾，将读取指针回退2个字节，待下一轮读取
+    （3）、将第（2）步的buf转换成01序列
+        i、将单个字节转换成整数，并将其转成2进制，同时进行8位对齐，如果已读取到文件末尾，需要进行补0的判断，并截取掉补0的序列
+        ii、使用第1步的huffman树对上一步的01序列进行解码，得到一组整型序列
+        iii、将整型序列逐个转换成bytes写入解压文件中
+    （4）反复执行第2步，直到读取到文件末尾；解压缩过程结束
 """
 
 import about_huffman
@@ -21,7 +53,9 @@ def make_huffman_from_source(file_path):
     fb = open(file_path, mode="rb")
     b = fb.read(1)
     while b:
+        # 逐个字节读取，并将单个字节转换成整数
         val = int.from_bytes(b, byteorder="big")
+        # 记录每个整数出现次数
         if val in bytes_times:
             bytes_times[val] += 1
         else:
@@ -32,6 +66,7 @@ def make_huffman_from_source(file_path):
     bytes_weights = []
     for b, t in bytes_times.items():
         bytes_weights.append((b, t))
+    # 利用整数出现频率列表，创建huffman数
     huffman_tree = about_huffman.HuffmanTree(bytes_weights)
     return huffman_tree
 

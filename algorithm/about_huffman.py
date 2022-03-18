@@ -49,7 +49,7 @@ class HuffmanTree:
         # 按照权重排序
         char_weights = sorted(char_weights, key=lambda x: x[1])
 
-        # 取前两个节点
+        # 取前两个权重最小的节点
         if len(char_weights[0]) == 3:
             left = char_weights[0][2]
         else:
