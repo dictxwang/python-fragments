@@ -124,6 +124,10 @@ Namespaces are one honking great idea -- let's do more of those!
 
 [18、搜索算法：利用Trie实现多模字符串的匹配（类AC自动机）](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_ac_with_trie.py)
 
+[19、排序算法：计数排序（支持负数）](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_counting_sort.py)
+
+[20、排序算法：基数排序（支持负数）](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_radix_sort.py)
+
 #### 三、扩展模块相关
 
 [1、folium包的地图应用](https://github.com/dictxwang/python-fragments/blob/main/open_modules/about_folium.py)
