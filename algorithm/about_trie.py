@@ -46,6 +46,9 @@ class Trie:
         # 根节点
         self._root = Node(None)
 
+    def get_root(self):
+        return self._root
+
     def insert(self, word) -> None:
         if word is None:
             return
