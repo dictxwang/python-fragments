@@ -54,6 +54,7 @@ def make_huffman_from_source(file_path):
     b = fb.read(1)
     while b:
         # 逐个字节读取，并将单个字节转换成整数
+        # 压缩和解压缩过程字节序都使用大端
         val = int.from_bytes(b, byteorder="big")
         # 记录每个整数出现次数
         if val in bytes_times:
