@@ -4,7 +4,6 @@ __author__ = 'wangqiang'
 
 """
 基于哈夫曼编码实现压缩/解压缩
-暂时不支持unicode字符编码，这种情况需要考虑变长字节的问题
 """
 
 import about_huffman
@@ -44,7 +43,7 @@ def compress(huffman_tree, source_file):
     :param source_file: 原文件
     :return:
     """
-    compress_file = source_file + ".compress"
+    compress_file = source_file + ".zip"
     ofp = open(compress_file, mode="wb")
     # 序列化huffman树，以便保存到文件中
     huffman_bytes = pickle.dumps(huffman_tree)
@@ -155,7 +154,7 @@ def uncompress(compress_file):
                 append_bits = int.from_bytes(buf_more, byteorder="big")
                 read_end = True
             else:
-                # 未读到末尾，指针回退
+                # 未读到末尾，指针回退到多读两位前
                 fp.seek(offset, 0)
 
         for i in range(len(buf)):
@@ -183,9 +182,11 @@ def uncompress(compress_file):
 
 if __name__ == '__main__':
 
-    source_file = "/Users/wangqiang/web_data5/for_huffman_compress.txt"
+    # 压缩
+    source_file = "data/for_huffman_compression.txt"
     huffman = make_huffman_from_source(source_file)
     compress(huffman, source_file)
 
-    compress_file = "/Users/wangqiang/web_data5/for_huffman_compress.txt.compress"
+    # 解压缩
+    compress_file = "data/for_huffman_compression.txt.zip"
     uncompress(compress_file)
