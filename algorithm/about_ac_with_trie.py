@@ -3,7 +3,7 @@ __author__ = 'wangqiang'
 
 
 """
-trie的使用：pattern查找，例如查找一段文本命中了哪些关键词
+trie的使用：实现多模字符串的匹配（类AC自动机）
 """
 
 import re

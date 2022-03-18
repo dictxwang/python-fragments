@@ -118,6 +118,12 @@ Namespaces are one honking great idea -- let's do more of those!
 
 [15、数据结构：Trie字典树的python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_trie.py)
 
+[16、数据结构：Huffman哈夫曼树的python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_huffman.py)
+
+[17、压缩算法：利用哈夫曼树实现数据压缩与解压缩](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_huffman_compression.py)
+
+[18、搜索算法：利用Trie实现多模字符串的匹配（类AC自动机）](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_ac_with_trie.py)
+
 #### 三、扩展模块相关
 
 [1、folium包的地图应用](https://github.com/dictxwang/python-fragments/blob/main/open_modules/about_folium.py)
