@@ -9,7 +9,7 @@ __author__ = 'wangqiang'
     （1）、逐个字节读取原文件，并将每个字节转换成整数
     （2）、记录上一步中所有整数出现的次数
     （3）、利用第2步产生的整数-次数序列生成huffman树
-2、将huffman写入压缩文件（直接通过压缩文件解压需要）
+2、将huffman树写入压缩文件（直接通过压缩文件解压需要）
     （1）、将huffman树序列化（生成字节序列huffman_bytes），并计算序列化后的字节长度（huffman_length）
     （2）、将huffman_length转换成2个字节长度的字节序列写入压缩文件
     （3）、将huffman_bytes写入压缩文件
