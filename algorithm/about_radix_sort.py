@@ -56,11 +56,12 @@ def radix_sort(lst):
             bucket[bucket_index].append(num)
 
         # 结束一轮之前，将bucket中的数取出重新填充待排序序列
-        lst = []
+        index = 0
         for i in range(bucket_size):
             while bucket[i] is not None and len(bucket[i]) > 0:
                 # 按照先进先出取出
-                lst.append(bucket[i].pop(0))
+                lst[index] = bucket[i].pop(0)
+                index += 1
     return lst
 
 

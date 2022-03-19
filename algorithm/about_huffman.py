@@ -44,7 +44,12 @@ class HuffmanTree:
         return self._root
 
     def __build_tree(self, char_weights):
-        if len(char_weights) <= 1:
+        if not char_weights:
+            return
+        if len(char_weights) == 1:
+            # 只有一个权重，直接变成左子树或右子树即可
+            left = Node(char_weights[0][0], char_weights[0][1])
+            self._root.set_left(left)
             return
         # 按照权重排序
         char_weights = sorted(char_weights, key=lambda x: x[1])
