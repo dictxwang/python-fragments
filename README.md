@@ -128,6 +128,8 @@ Namespaces are one honking great idea -- let's do more of those!
 
 [20、排序算法：基数排序（支持负数）](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_radix_sort.py)
 
+[21、搜索算法：Dijkstra最短路径算法的另一种python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_dijkstra_another.py)
+
 #### 三、扩展模块相关
 
 [1、folium包的地图应用](https://github.com/dictxwang/python-fragments/blob/main/open_modules/about_folium.py)
