@@ -36,6 +36,7 @@ class SkipList:
 
     def find(self, value: int) -> Optional[None]:
         p = self._head
+        # 从最外层的指针开始遍历
         for i in range(self._level_count - 1, -1, -1):
             while p.get_forwards()[i] and p.get_forwards()[i].get_data() < value:
                 p = p.get_forwards()[i]
@@ -51,6 +52,8 @@ class SkipList:
             while p.get_forwards()[i] and p.get_forwards()[i].get_data() < value:
                 p = p.get_forwards()[i]
             update[i] = p
+
+        # 交换每一层指针的指向
         for i in range(level):
             new_node.get_forwards()[i] = update[i].get_forwards()[i]
             update[i].get_forwards()[i] = new_node
@@ -64,6 +67,7 @@ class SkipList:
             while p.get_forwards()[i] and p.get_forwards()[i].get_data() < value:
                 p = p.get_forwards()[i]
             update[i] = p
+        # 确定找到value后，交换每一层指针的指向
         if p.get_forwards()[0] and p.get_forwards()[0].get_data() == value:
             for i in range(self._level_count - 1, -1, -1):
                 if update[i].get_forwards()[i] and update[i].get_forwards()[i].get_data() == value:
