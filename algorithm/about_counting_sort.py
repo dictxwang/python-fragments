@@ -29,16 +29,16 @@ def counting_sort(lst):
         real_index = num + min_range_zero
         counting_lst[real_index] += 1
 
-    result = []
+    lst_index = 0
     for i in range(len(counting_lst)):
         while counting_lst[i] > 0:
             # 修正得到当前下标对应的真实数值
-            result.append(i - min_range_zero)
+            lst[lst_index] = i - min_range_zero
             counting_lst[i] -= 1
-    return result
+            lst_index += 1
 
 
 if __name__ == '__main__':
     lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, -1, -2, -3, 4, 5, 6, 7, 8]
-    lst = counting_sort(lst)
+    counting_sort(lst)
     print(lst)

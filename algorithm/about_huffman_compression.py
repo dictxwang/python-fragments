@@ -116,6 +116,7 @@ def compress(huffman_tree, source_file):
         codes += "0" * append_bits
         ofp.write(int.to_bytes(int(codes[:], 2), length=1, byteorder="big"))
     # 写入补齐的位数
+    # 当byte是一个字节时，其实不用考虑字节序；但是为了算法过程易于理解，这里还是设置一下byteorder参数
     ofp.write(int.to_bytes(append_bits, length=1, byteorder="big"))
     ofp.flush()
 
