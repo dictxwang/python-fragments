@@ -88,7 +88,7 @@ Namespaces are one honking great idea -- let's do more of those!
 
 #### 二、数据结构与算法
 
-[1、排序算法：冒泡排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_bubble.py)
+[1、排序算法：冒泡排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_bubble_sort.py)
 
 [2、排序算法：快速排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_quick_sort.py)
 
@@ -131,6 +131,8 @@ Namespaces are one honking great idea -- let's do more of those!
 [21、搜索算法：Dijkstra最短路径算法的另一种python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_dijkstra_another.py)
 
 [22、数据结构：SkipList跳跃链表的python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_skip_list.py)
+
+[23、排序算法：桶排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_bucket_sort.py)
 
 #### 三、扩展模块相关
 
