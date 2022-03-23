@@ -134,6 +134,10 @@ Namespaces are one honking great idea -- let's do more of those!
 
 [23、排序算法：桶排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_bucket_sort.py)
 
+[24、搜索算法：利用python原生库实现bloom过滤器](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_bloom_filter.py)
+
+[25、搜索算法：利用mmh3+bitarray实现BloomFilter](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_bloom_filter_another.py)
+
 #### 三、扩展模块相关
 
 [1、folium包的地图应用](https://github.com/dictxwang/python-fragments/blob/main/open_modules/about_folium.py)
