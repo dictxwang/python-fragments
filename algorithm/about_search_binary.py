@@ -14,10 +14,10 @@ def binary_search(lst, pattern, offset=0):
     :param offset: 切片下标偏移量（即从列表的offset元素开始查找匹配）
     :return:
     """
-    if not lst or (len(lst) == 1 and lst[0] != pattern):
+    if not lst:
         return -1
 
-    middle = (len(lst) - 1) // 2
+    middle = len(lst) // 2
     if pattern == lst[middle]:
         return offset + middle
     elif pattern > lst[middle]:
@@ -28,7 +28,8 @@ def binary_search(lst, pattern, offset=0):
 
 
 if __name__ == '__main__':
-    lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20]
+    lst = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20]
+    print(binary_search(lst, 0))
     print(binary_search(lst, 1))
     print(binary_search(lst, 3))
     print(binary_search(lst, 20))
