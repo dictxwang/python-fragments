@@ -85,7 +85,7 @@ def compress(huffman_tree, source_file):
     huffman_bytes = pickle.dumps(huffman_tree)
     huffman_length = len(huffman_bytes)
 
-    # 第一个字节写入huffman树的长度（默认用2个字节来保存这个长度，最大值short足够了）
+    # 首先写入huffman树的长度（用2个字节来保存这个长度，short的最大值足够了）
     ofp.write(int.to_bytes(huffman_length, length=2, byteorder="big"))
     ofp.write(huffman_bytes)
     ofp.flush()
@@ -147,9 +147,10 @@ def uncompress(compress_file):
             else:
                 node = node.get_right()
             if node.get_name():
-                # 匹配成功，回到根节点重新开始
+                # 匹配成功
                 remain = codes[i + 1:]
                 text.append(node.get_name())
+                # 回到根节点，重新开始
                 node = huffman_tree.get_root()
         return remain, text
 
