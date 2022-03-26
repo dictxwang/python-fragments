@@ -23,7 +23,7 @@ def heap_sort(lst):
             latest = left
         if right < end and lst[latest] < lst[right]:
             latest = right
-        # 如果latest == current，代表current节点没有子节点
+        # 如果latest == current，代表current节点没有子节点或者无须进行调整
         if latest != current:
             lst[latest], lst[current] = lst[current], lst[latest]
             # 递归判断交换后的节点及其子节点是否满足最大堆

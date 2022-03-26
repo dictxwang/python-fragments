@@ -40,6 +40,8 @@ class SkipList:
         for i in range(self._level_count - 1, -1, -1):
             while p.get_forwards()[i] and p.get_forwards()[i].get_data() < value:
                 p = p.get_forwards()[i]
+
+        # 判断第一层，实际上就是判断p的下一个节点
         return p.get_forwards()[0] if p.get_forwards()[0] and p.get_forwards()[0].get_data() == value else None
 
     def insert(self, value: int):

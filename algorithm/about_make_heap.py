@@ -6,6 +6,7 @@ __author__ = 'wangqiang'
 最大堆的两种构建方式
 最大堆：近似完全二叉树，父节点值始终大于子节点值
 数组表示法：子节点下标//2，正好是父节点下标；第一个非叶子节点下标是count//2
+    当前节点下标*2+1是其左子节点下标，当前节点下标*2+2是其右子节点下标
 '''
 
 
@@ -59,10 +60,10 @@ class MaxHeapB:
         left = index * 2 + 1
         right = index * 2 + 2
 
-        # 如果左子节点存在，并且左子节点大约当前节点，将左子节点作为交换节点
+        # 如果左子节点存在，并且左子节点大于当前节点，将左子节点作为交换节点
         if left < size and self._data[left] > self._data[index]:
             latest = left
-        # 如果右子节点存在，并且右子节点大约当前节点和左子节点，将右子节点作为交换节点
+        # 如果右子节点存在，并且右子节点大于当前节点和左子节点，将右子节点作为交换节点
         if right < size and self._data[right] > self._data[latest]:
             latest = right
         if latest != index:
