@@ -9,7 +9,7 @@ __author__ = 'wangqiang'
 """
 
 
-def radix_sort(lst):
+def radix_sort_x(lst):
 
     if not lst or len(lst) == 1:
         return lst
