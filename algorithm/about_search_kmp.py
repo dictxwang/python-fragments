@@ -51,14 +51,15 @@ def kmp_search(target, pattern):
 
         if j == len(pattern):
             result.append(i - j)
+            # 继续开始新一轮匹配，依然从0开始
             j = 0
     return result
 
 
 if __name__ == '__main__':
 
-    target = "AAABCEABDABCFABCABCEABCABZ"
-    pattern = "ABCAB"
+    target = "ABABCEABDABCFABCABCEABCABZ"
+    pattern = "ABC"
     # 先打印一下next表
     nxt = gen_next(pattern)
     print(nxt)
