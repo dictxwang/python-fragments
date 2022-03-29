@@ -90,7 +90,7 @@ class HuffmanTree:
             result = []
             if node is None:
                 return result
-            # 左子树是0右子树是1，根节点默认是0
+            # 左子树是0右子树是1，根节点默认是空
             if node.get_name():
                 result.append((node.get_name(), prefix))
             if node.get_left():
