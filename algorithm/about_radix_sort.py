@@ -9,7 +9,7 @@ __author__ = 'wangqiang'
 """
 
 
-def radix_sort_x(lst):
+def radix_sort(lst):
 
     if not lst or len(lst) == 1:
         return lst
@@ -36,7 +36,7 @@ def radix_sort_x(lst):
     bucket = [None] * bucket_size
 
     # 进行多轮基数计算
-    for level in range(0, radix_level - 1):
+    for level in range(0, radix_level):
         radix = pow(10, level)
         radix_next = pow(10, level + 1)
         for num in lst:
@@ -66,6 +66,6 @@ def radix_sort_x(lst):
 
 
 if __name__ == '__main__':
-    lst = [1, 2, 3, 4, 0, 0, 1, 2, 23, -2, -5, -456, 6, 8797, 53, 456, -12393]
+    lst = [1, 2, 3, 4, 0, 0, 12393, 1, 2, 23, -2, -5, -456, 6, 8797, 53, 456, -12393]
     lst = radix_sort(lst)
     print(lst)

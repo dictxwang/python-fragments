@@ -9,6 +9,8 @@ import random
 
 
 def shell_sort(lst):
+    if not lst or len(lst) == 1:
+        return lst
     # 通过改变步长，可以极大缩小交换次数
     # 当gap初始值是1时，就退化成插入排序
     gap = len(lst) // 2
@@ -29,8 +31,12 @@ def shell_sort(lst):
 
 if __name__ == '__main__':
 
-    lst = []
-    for i in range(0, 1000):
-        lst.append(random.randint(10, 50000))
-    total_swap = shell_sort(lst)
-    print("total_swap: ", total_swap)  # 15300+
+    lst = [12, 23, -45, 0, 1, 2, 3]
+    shell_sort(lst)
+    print(lst)
+
+    # lst = []
+    # for i in range(0, 1000):
+    #     lst.append(random.randint(10, 50000))
+    # total_swap = shell_sort(lst)
+    # print("total_swap: ", total_swap)  # 15300+

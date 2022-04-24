@@ -9,6 +9,9 @@ import random
 
 def insertion_sort(lst):
     total_swap = 0
+    if not lst or len(lst) == 1:
+        return total_swap
+
     for j in range(1, len(lst)):
         total_swap += 1
         # 选取当前待排序的元素
