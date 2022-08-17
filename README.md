@@ -169,3 +169,4 @@ Namespaces are one honking great idea -- let's do more of those!
 [2、个税计算](https://github.com/dictxwang/python-fragments/blob/main/short_tools/calculate_tax_rate.py)
 
 [3、投资年化收益计算](https://github.com/dictxwang/python-fragments/blob/main/short_tools/calculate_yearly_investment_return.py)
+
