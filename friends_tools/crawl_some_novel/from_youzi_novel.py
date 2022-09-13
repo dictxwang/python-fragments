@@ -102,7 +102,7 @@ def get_all_detail_contents(novel_name, index_urls, start_index=None):
             tree = etree.HTML(content)
 
             # parse content
-            start_flag = '<div id="acontent" class="acontent">'
+            start_flag = '<div id="bcontent" class="bcontent">'
             start = content.find(start_flag) + len(start_flag)
             end = content.find("</div>", start)
             if end > start:
@@ -126,6 +126,16 @@ def get_all_detail_contents(novel_name, index_urls, start_index=None):
         fp.close()
 
 
+def save_index_file(novel_name, index_urls):
+    fp = open(f"data/{novel_name}/000_目录.txt", mode="w", encoding="utf8", errors="ignore")
+    for t in index_urls:
+        name, _ = t
+        fp.write(f"{name}\n")
+        fp.flush()
+    fp.close()
+    print("finish save novel index.")
+
+
 def crawl_one_novel(host, novel_info):
     novel_id, start_index = novel_info
     try:
@@ -138,6 +148,9 @@ def crawl_one_novel(host, novel_info):
 
         # make data folder
         make_novel_data_folder(novel_name)
+
+        # save index
+        save_index_file(novel_name, index_urls)
 
         # crawl all detail contents
         get_all_detail_contents(novel_name, index_urls, start_index=start_index)
@@ -156,9 +169,9 @@ def make_novel_data_folder(novel_name):
 
 if __name__ == '__main__':
 
-    host = "m.xxx.com"
+    host = "wap.xxxx.com"
     novel_base_info = [
-        ("19446", None),
+        ("44169", None),
     ]
 
     for novel_info in novel_base_info:
