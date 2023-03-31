@@ -31,7 +31,7 @@ def shell_sort(lst):
 
 if __name__ == '__main__':
 
-    lst = [12, 23, -45, 0, 1, 2, 3]
+    lst = [12, 23, -45, 2, 1, 3, 0]
     shell_sort(lst)
     print(lst)
 

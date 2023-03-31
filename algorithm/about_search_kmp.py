@@ -9,7 +9,7 @@ __author__ = 'wangqiang'
 def gen_next(pattern):
     """
     计算next表
-    通过PMT(Partial Match Table)『最长公共前后缀』推到
+    通过部分匹配表PMT(Partial Match Table)『最长公共前后缀』推导
     :param pattern: 待查找串
     :return:
     """
@@ -28,7 +28,6 @@ def gen_next(pattern):
             nxt[i] = j
         else:
             # 这里相当于是回到起始位置重新开始匹配
-            # j = nxt[j]
             j = -1
     return nxt
 
@@ -58,8 +57,8 @@ def kmp_search(target, pattern):
 
 if __name__ == '__main__':
 
-    target = "ABABCEABDABCFABCABCEABCABZ"
-    pattern = "ABC"
+    target = "BBC ABCDAB ABCDABCDABDE"
+    pattern = "ABCDABCD"
     # 先打印一下next表
     nxt = gen_next(pattern)
     print(nxt)

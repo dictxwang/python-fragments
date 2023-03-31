@@ -6,29 +6,37 @@ __author__ = 'wangqiang'
 """
 
 
-def binary_search(lst, pattern, offset=0):
+def do_binary_search(lst, pattern, start, end):
     """
     二分查找
     :param lst: 待查找序列（切片）
     :param pattern: 查找元素
-    :param offset: 切片下标偏移量（即从列表的offset元素开始查找匹配）
+    :param start: 起始查找下标
+    :param end: 结束查找下标
     :return:
     """
-    if not lst:
+    if not lst or start > end:
         return -1
-
-    middle = len(lst) // 2
-    if pattern == lst[middle]:
-        return offset + middle
-    elif pattern > lst[middle]:
-        # 待查找元素大于序列中间值，递归待右侧序列查找
-        return binary_search(lst[middle + 1:], pattern, offset=offset+middle+1)
+    middle_index = (end - start + 1) // 2 + start
+    middle_value = lst[middle_index]
+    if middle_value == pattern:
+        return middle_index
+    elif middle_value > pattern:
+        # 继续在左子树查找
+        return do_binary_search(lst, pattern, start, middle_index - 1)
     else:
-        return binary_search(lst[:middle], pattern, offset=offset)
+        # 继续在右子树查找
+        return do_binary_search(lst, pattern, middle_index + 1, end)
 
+
+def binary_search(lst, pattern):
+    return do_binary_search(lst, pattern, 0, len(lst) - 1)
+    
 
 if __name__ == '__main__':
     lst = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20]
+    start = 0
+    end = len(lst) - 1
     print(binary_search(lst, 0))
     print(binary_search(lst, 1))
     print(binary_search(lst, 3))

@@ -98,6 +98,6 @@ def create_wb():
 
 if __name__ == '__main__':
 
-    read_wb()
-    append_wb()
+    # read_wb()
+    # append_wb()
     create_wb()
