@@ -36,9 +36,10 @@ class K_Means(object):
             for feature in data_set:
                 distances = []
                 for center in self._centers:
-                    # 计算欧拉距离（euclidean distance） / 等价于求二范数
+                    # 计算欧拉距离（euclidean distance）
                     # sqrt((x1-x2)**2 + (y1-y2)**2 + ... + (n1-n2)**2)
                     # np.sqrt(np.sum((feature - self._centers[center]) ** 2))
+                    # 这里用求二范数的方式，等价于计算欧拉距离
                     distances.append(np.linalg.norm(feature - self._centers[center]))
                 classification = distances.index(min(distances))
                 self._clf[classification].append(feature)
@@ -63,7 +64,7 @@ class K_Means(object):
         判断数据在哪个分类
         '''
         distances = [np.linalg.norm(p_data - self._centers[center]) for center in self._centers]
-        # 选择举例最近的中心点所在分类
+        # 选择距离最近的中心点所在分类
         index = distances.index(min(distances))
         return index
 
