@@ -2,6 +2,9 @@
 # -*- coding: utf8 -*-
 __author__ = "wangqiang"
 
+'''
+k-means适用于对凸数据集的分类
+'''
 
 import numpy as np
 from matplotlib import pyplot
@@ -28,12 +31,13 @@ class K_Means(object):
         # 进行多轮计算，直到中心点误差在允许的范围内
         for i in range(self._max_iter):
             for j in range(self._k):
-                self._clf[j]= []
+                self._clf[j] = []
             # print("质点：", self._centers)
             for feature in data_set:
                 distances = []
                 for center in self._centers:
-                    # 计算欧拉距离（euclidean distance）
+                    # 计算欧拉距离（euclidean distance） / 等价于求二范数
+                    # sqrt((x1-x2)**2 + (y1-y2)**2 + ... + (n1-n2)**2)
                     # np.sqrt(np.sum((feature - self._centers[center]) ** 2))
                     distances.append(np.linalg.norm(feature - self._centers[center]))
                 classification = distances.index(min(distances))
@@ -73,7 +77,7 @@ if __name__ == '__main__':
 
     # 绘制中心点
     for center in k_means._centers:
-        pyplot.scatter(k_means._centers[center][0], k_means._centers[center][1], marker="*", s=150)
+        pyplot.scatter(k_means._centers[center][0], k_means._centers[center][1], marker="*", s=100)
 
     # 绘制分组
     for cat in k_means._clf:
