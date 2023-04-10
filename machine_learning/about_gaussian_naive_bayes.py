@@ -4,6 +4,9 @@ __author__ = 'wangqiang'
 
 '''
 高斯朴素贝叶斯分类器（Gaussian Naive Bayes Classifier）
+适用于特征数据是连续值的数据集
+pip install pandas
+pip install numpy
 '''
 
 import pandas as pd
