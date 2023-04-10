@@ -4,7 +4,7 @@ __author__ = 'wangqiang'
 
 '''
 高斯朴素贝叶斯分类器（Gaussian Naive Bayes Classifier）
-适用于特征数据是连续值的数据集
+适用于特征数据是连续值的数据集（注意：如果特征数据是离散值通常符合多项式分布，如果特征数据是布尔型离散值通常符合伯努利分布）
 pip install pandas
 pip install numpy
 '''
