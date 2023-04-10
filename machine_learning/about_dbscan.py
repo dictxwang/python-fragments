@@ -8,6 +8,8 @@ DBSCAN Density-Based Spatial Clustering of Applications with Noise
 
 dbscan适用于对任意形状的稠密数据集进行聚类
     从一些核心点出发，向一定范围内相邻点不断扩散，直到扩散的新节点数量小于阈值
+
+pip install scikit-learn
 '''
 
 import random
