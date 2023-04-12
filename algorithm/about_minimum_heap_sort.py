@@ -28,7 +28,7 @@ def minimum_heap_sort(lst):
     print(lst)
 
     # 通过遍历重建最小堆，实现排序
-    # 这里排完序是逆序的，这样便于树重建的实现
+    # 这里为了便于堆重建，先以逆序方式实现排序
     for i in range(len(lst) - 1, 0, -1):
         lst[0], lst[i] = lst[i], lst[0]
         sift_up(0, i)
