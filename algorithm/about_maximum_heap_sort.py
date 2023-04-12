@@ -7,7 +7,7 @@ __author__ = 'wangqiang'
 '''
 
 
-def heap_sort(lst):
+def maximum_heap_sort(lst):
 
     def sift_down(current, end):
         """
@@ -30,11 +30,11 @@ def heap_sort(lst):
             sift_down(latest, end)
 
     # 构建最大堆
-    # 从最后一个叶子节点开始到根节点结束（实际上前面数次因为叶子节点没有子节点，会浪费掉；但是这样处理逻辑相对简洁）
+    # 从最后一个叶子节点开始到根节点结束（实际上前面数次会因为是叶子节点而做了无效遍历；但是这样处理逻辑相对简洁）
     for current in range(len(lst) - 1, -1, -1):
         sift_down(current, len(lst))
 
-    print(lst)  # [340, 200, 7, 20, 1, -12, 2, 6]
+    print(lst)  # [340, 200, 340, 20, 2, -12, 7, 6, -12, 1]
 
     # 进行排序（将根节点元素往队尾移动，然后再对除队尾外的元素重新构建堆）
     for current in range(len(lst) - 1, 0, -1):
@@ -44,5 +44,5 @@ def heap_sort(lst):
 
 if __name__ == "__main__":
     lst = [2, 1, 7, 6, 200, -12, 340, 20, -12, 340]
-    heap_sort(lst)
+    maximum_heap_sort(lst)
     print(lst)  # [-12, -12, 1, 2, 6, 7, 20, 200, 340, 340]
