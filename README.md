@@ -162,7 +162,17 @@ Namespaces are one honking great idea -- let's do more of those!
 
 [11、webscokets的多线程应用](https://github.com/dictxwang/python-fragments/blob/main/open_modules/about_websocket_threading.py)
 
-#### 四、工具脚本
+#### 四、机器学习-NLP相关
+
+[1、聚类-基于密度的噪声应用空间聚类(DBSCAN)](https://github.com/dictxwang/python-fragments/blob/main/machine_learning/about_dbscan.py)
+
+[2、分类-朴素贝叶斯(Naive Bayes)](https://github.com/dictxwang/python-fragments/blob/main/machine_learning/about_naive_bayes.py)
+
+[3、分类-基于gensim的word2vec应用](https://github.com/dictxwang/python-fragments/blob/main/machine_learning/about_gensim_word2vec.py)
+
+[4、聚类-k-means](https://github.com/dictxwang/python-fragments/blob/main/machine_learning/about_kmeans.py)
+
+#### 五、工具脚本
 
 [1、贷款本息计算](https://github.com/dictxwang/python-fragments/blob/main/short_tools/calculate_land.py)
 
