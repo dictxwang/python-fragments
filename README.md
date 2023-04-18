@@ -166,7 +166,7 @@ Namespaces are one honking great idea -- let's do more of those!
 
 [1、聚类-基于密度的噪声应用空间聚类(DBSCAN)](https://github.com/dictxwang/python-fragments/blob/main/machine_learning/about_dbscan.py)
 
-[2、分类-朴素贝叶斯(Naive Bayes)](https://github.com/dictxwang/python-fragments/blob/main/machine_learning/about_naive_bayes.py)
+[2、分类-朴素贝叶斯(Naive Bayes)](https://github.com/dictxwang/python-fragments/blob/main/machine_learning/about_gaussian_naive_bayes.py)
 
 [3、分类-基于gensim的word2vec应用](https://github.com/dictxwang/python-fragments/blob/main/machine_learning/about_gensim_word2vec.py)
 
