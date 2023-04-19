@@ -14,6 +14,7 @@ from matplotlib import pyplot as plt
 def test01():
     '''
     以灰度方式读取图片
+    cv2.IMREAD_GRAYSCALE=0
     :return:
     '''
     img = cv2.imread("data/lenna.png", cv2.IMREAD_GRAYSCALE)
@@ -53,11 +54,11 @@ def test04():
     opencv以BGR模式加载，matplotlib以RGB模式加载
     :return:
     '''
-    img = cv2.imread("data/lenna.png")
+    img = cv2.imread("data/lenna.png")  # 默认以彩色方式加载图片 cv2.IMREAD_COLOR = 1
     cv2.imshow("BGR", img)
     cv2.waitKey(0)
 
-    # 只用打开cv2加载的图片，颜色不对
+    # 直接打开cv2加载的图片，颜色不对
     plt.imshow(img)
     plt.title("BGR")
     plt.show()
@@ -131,7 +132,7 @@ def test07():
     plt.title("RGB")
     plt.imshow(img2)
 
-    # red通道减去green通道
+    # red通道减去blue通道
     real_r = r - b
     plt.subplot(1, 3, 2)
     plt.title("R-Channel")
@@ -249,6 +250,61 @@ def test12():
     plt.show()
 
 
+def test13():
+    '''
+    叠加alpha通道
+    '''
+    img = cv2.imread("data/xingqiu.jpg")
+    img_bgra = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
+    b, g, r, a = cv2.split(img_bgra)
+    a = np.ones(b.shape, dtype=b.dtype) * 255
+    a[:, :int(b.shape[0] / 2)] = 100  # 改变右半边的透明度
+
+    img_merge = cv2.merge((b, g, r, a))
+    cv2.imwrite("data/xingqiu_alpha.png", img_merge)
+
+
+def test14():
+    '''
+    图像翻转
+    '''
+    img = cv2.imread("data/fruit.jpg")
+    h, w = img.shape[:2]
+    center = (w//2, h//2)
+    M = cv2.getRotationMatrix2D(center, 45, 1.0)  # 参数90表示逆时针旋转90°
+
+    # 计算旋转后的长和宽
+    rotated_h = int((w * np.abs(M[0, 1]) + (h * np.abs(M[0, 0]))))
+    rotated_w = int((h * np.abs(M[0, 1]) + (w * np.abs(M[0, 0]))))
+    M[0, 2] += (rotated_w - w) // 2
+    M[1, 2] += (rotated_h - h) // 2
+
+    # 执行旋转
+    rotated_img = cv2.warpAffine(img, M, (rotated_w, rotated_h))
+    cv2.imshow("rotated image", rotated_img)
+    cv2.waitKey()
+    cv2.destroyAllWindows()
+
+
+def test15():
+    '''
+    图片抠图
+    '''
+    img = cv2.imread("data/lenna.png")
+
+    bboxes = [
+        [200, 200, 200, 200],
+        [100, 100, 100, 100],
+        [190, 80, 90, 300]
+    ]
+    bbox_index = np.zeros([*img.shape[:2]]).astype(bool)
+    for bbox in bboxes:
+        bbox_index[bbox[1]:bbox[1] + bbox[3], bbox[0]:bbox[0] + bbox[2]] = True
+    img[np.where(~bbox_index)] = 0
+    cv2.imshow("bk_img", img)
+    cv2.waitKey()
+
+
 if __name__ == "__main__":
     # test01()
     # test02()
@@ -261,4 +317,7 @@ if __name__ == "__main__":
     # test09()
     # test10()
     # test11()
-    test12()
+    # test12()
+    # test13()
+    # test14()
+    test15()
