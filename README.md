@@ -162,6 +162,8 @@ Namespaces are one honking great idea -- let's do more of those!
 
 [11、webscokets的多线程应用](https://github.com/dictxwang/python-fragments/blob/main/open_modules/about_websocket_threading.py)
 
+[12、PIL的基本应用](https://github.com/dictxwang/python-fragments/blob/main/open_modules/about_pillow.py)
+
 #### 四、机器学习-NLP相关
 
 [1、聚类-基于密度的噪声应用空间聚类(DBSCAN)](https://github.com/dictxwang/python-fragments/blob/main/machine_learning/about_dbscan.py)
