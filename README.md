@@ -138,6 +138,7 @@ Namespaces are one honking great idea -- let's do more of those!
 
 [25、搜索算法：利用mmh3+bitarray实现BloomFilter](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_bloom_filter_another.py)
 
+[26、数据结构：DoubleArrayTrie双数组前缀树的python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_double_array_trie.py)
 #### 三、扩展模块相关
 
 [1、folium包的地图应用](https://github.com/dictxwang/python-fragments/blob/main/open_modules/about_folium.py)
