@@ -26,17 +26,17 @@ class DoubleArrayTrie:
         self._build_check_array()
 
     def _build_check_array(self):
-        for index in range(len(self._check_array)):
+        for index in range(self._array_length):
             if index == 0:
                 self._check_array[index] = -1
             elif self._base_array[index] is None:
                 self._check_array[index] = None
             elif len(self._base_array[index][0]) == 1:
-                self._check_array[index] = 0  # 根节点位置始终是0
+                self._check_array[index] = 0  # 首字的前缀是根节点，根节点位置始终是0
             else:
                 prefix = self._base_array[index][0]
                 parent_prefix = prefix[:len(prefix) - 1]
-                for base_index in range(len(self._base_array)):
+                for base_index in range(self._array_length):
                     base = self._base_array[base_index]
                     if base is not None and base[0] == parent_prefix:
                         break
@@ -53,7 +53,7 @@ class DoubleArrayTrie:
                 current_level_prefix.add("")
             else:
                 for w in words:
-                    if len(w) >= level:
+                    if len(w) >= level:  # 通过词的字数，判断是否会出现在当前层
                         current_level_prefix.add(w[0: level - 1])
             if len(current_level_prefix) == 0:
                 break
@@ -76,7 +76,7 @@ class DoubleArrayTrie:
                         if ch in exists:
                             continue  # 已经在数组中，跳过即可
                         current = prefix + ch
-                        current_index = prefix_info[1] + self._char_code[ch]
+                        current_index = prefix_info[1] + self._char_code[ch]  # 前缀的base值+当前字的code值
                         is_word = len(word) == level
                         if not self._base_array[current_index]:
                             # 位置未被占用，直接写入
@@ -102,24 +102,24 @@ class DoubleArrayTrie:
                                 # 尝试计算当前单字的位置
                                 current_index = prefix_base + self._char_code[ch]
                                 if current_index in ch_all_index or self._base_array[current_index] is not None:
-                                    # 当前单字位置出现冲，需要对前缀base再+1，重头开始重新计算
+                                    # 当前单字位置出现冲突，需要对前缀base再+1，重头开始重新计算
                                     continue
                                 else:
-                                    # 位置没有重头，跳出循环
+                                    # 位置没有冲突，跳出循环
                                     break
 
                             # 先替换原有单字的位置
                             for ch_exist in exists:
                                 old_index = prefix_info[1] + self._char_code[ch_exist]
                                 new_index = prefix_base + self._char_code[ch_exist]
-                                old_info = self._base_array[old_index]
+                                old_info = self._base_array[old_index]  # 获取原信息，主要用于回填是否是word的标记
                                 self._base_array[old_index] = None
                                 self._base_array[new_index] = [prefix + ch_exist, prefix_base, old_info[2]]
 
                             # 再设置当前单字的位置
                             self._base_array[prefix_base + self._char_code[ch]] = [current, prefix_base, is_word]
 
-                            # 重置前缀的base
+                            # 重置前缀的base值
                             prefix_info[1] = prefix_base
 
                         exists.add(ch)
@@ -172,7 +172,7 @@ class DoubleArrayTrie:
 
 if __name__ == '__main__':
 
-    data = ["清华", "清华大学", "清新", "中华", "华人", "北京", "北京天安门", "北京的金山", "金山光芒", "光芒照四方"]
+    data = ["清华", "清华大学", "清新", "中华", "华人", "北京", "北京天安门", "北京的金山", "金山光芒", "光芒照四方", "照四方"]
     dat = DoubleArrayTrie(data)
     print(dat._char_code)
     print(dat._base_array)
@@ -181,3 +181,5 @@ if __name__ == '__main__':
     print(dat.contains("北京天安门"))
     print(dat.contains("光芒照四方"))
     print(dat.contains("北京的金山上"))
+    print(dat.contains("四方"))
+    print(dat.contains("照四方"))
