@@ -14,7 +14,7 @@ class DoubleArrayTrie:
     def __init__(self, words):
         self._char_code = None  # 保存所有的单字及其编码
         self._array_length = 0  # base与check数组的长度
-        self._base_array = None
+        self._base_array = None  # 元素: [prefix, base, is_word]
         self._check_array = None
 
         self._parse_words(words)  # 生成单字的编码
