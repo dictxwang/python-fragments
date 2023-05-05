@@ -8,6 +8,7 @@ trie的使用：实现多模字符串的匹配（类AC自动机）
 
 import re
 import about_trie
+import time
 
 
 def make_trie(keywords_file):
@@ -137,3 +138,13 @@ if __name__ == '__main__':
     print(search_match_words(trie, "123士農工商"))
     print(search_match_words(trie, "士農工商xyz"))
     print(search_match_words(trie, "123Historians are now turning to local gazetteers of Ming China for clues that would show consistent growth in population."))
+
+    # 测速
+    source = "123Historians are now turning to local gazetteers of Ming China for clues that would show consistent growth in population."
+    times = 100
+    start = time.time()
+    for _ in range(times):
+        search_match_words(trie, source)
+
+    cost = (time.time() - start) / 1000
+    print(len(source) * times / cost)  # 大约 554178字/s

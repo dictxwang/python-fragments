@@ -49,7 +49,7 @@ def first_sample():
 
 def second_sample():
     '''
-    语料为当个文件
+    语料为单个文件
     文件内容格式： 一行一条句子，单词用空格分隔
     '''
     sentences = LineSentence("data/word2vec_second_sample_source.txt", max_sentence_length=1000)
