@@ -85,5 +85,5 @@ if __name__ == '__main__':
     sh2 = simhash.sim_hash("李白·唐 举头望明月，低头思故乡。床前明月光，疑似地上霜。")
 
     # 计算汉明距离
-    distance = simhash.hamming_distance(sh1, sh2)
+    distance = simhash.hamming_distance(sh1, sh2)  # 距离越小，相似度越高
     print(distance)  # 0
