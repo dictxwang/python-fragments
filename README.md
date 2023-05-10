@@ -175,6 +175,14 @@ Namespaces are one honking great idea -- let's do more of those!
 
 [4、聚类-k-means](https://github.com/dictxwang/python-fragments/blob/main/machine_learning/about_kmeans.py)
 
+[5、搜索相关性算法-BM25](https://github.com/dictxwang/python-fragments/blob/main/machine_learning/about_bm25.py)
+
+[6、搜索网页去重算法-IMatch](https://github.com/dictxwang/python-fragments/blob/main/machine_learning/about_imatch.py)
+
+[7、搜索网页去重算法-Shingling](https://github.com/dictxwang/python-fragments/blob/main/machine_learning/about_shingling.py)
+
+[8、搜索网页去重算法-SimHash](https://github.com/dictxwang/python-fragments/blob/main/machine_learning/about_simhash.py)
+
 #### 五、工具脚本
 
 [1、贷款本息计算](https://github.com/dictxwang/python-fragments/blob/main/short_tools/calculate_land.py)
