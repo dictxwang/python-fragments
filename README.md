@@ -98,47 +98,51 @@ Namespaces are one honking great idea -- let's do more of those!
 
 [5、搜索算法：Dijkstra最短路径算法](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_dijkstra.py)
 
-[6、排序算法：堆排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_heap_sort.py)
+[6、数据结构：最大堆](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_maximum_heap.py)
 
-[7、数据结构：堆的构建过程](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_make_heap.py)
+[7、排序算法：堆排序-基于最大堆](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_maximum_heap_sort.py)
 
-[8、排序算法：插入排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_insertion_sort.py)
+[8、数据结构：最小堆](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_minimum_heap.py)
 
-[9、排序算法：希尔排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_shell_sort.py)
+[9、排序算法：堆排序-基于最小堆](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_minimum_heap_sort.py)
 
-[10、排序算法：归并排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_merge_sort.py)
+[10、排序算法：插入排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_insertion_sort.py)
 
-[11、图的遍历：BFS广度优先遍历](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_bfs.py)
+[11、排序算法：希尔排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_shell_sort.py)
 
-[12、图的遍历：DFS深度优先遍历](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_dfs.py)
+[12、排序算法：归并排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_merge_sort.py)
 
-[13、查找算法：二分查找](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_search_binary.py)
+[13、图的遍历：BFS广度优先遍历](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_bfs.py)
 
-[14、数据结构：二叉查找树的python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_rb_tree.py)
+[14、图的遍历：DFS深度优先遍历](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_dfs.py)
 
-[15、数据结构：Trie字典树的python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_trie.py)
+[15、查找算法：二分查找](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_search_binary.py)
 
-[16、数据结构：Huffman哈夫曼树的python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_huffman.py)
+[16、数据结构：二叉查找树的python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_rb_tree.py)
 
-[17、压缩算法：利用哈夫曼树实现数据压缩与解压缩](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_huffman_compression.py)
+[17、数据结构：Trie字典树的python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_trie.py)
 
-[18、搜索算法：利用Trie实现多模字符串的匹配（类AC自动机）](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_ac_with_trie.py)
+[18、数据结构：Huffman哈夫曼树的python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_huffman.py)
 
-[19、排序算法：计数排序（支持负数）](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_counting_sort.py)
+[19、压缩算法：利用哈夫曼树实现数据压缩与解压缩](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_huffman_compression.py)
 
-[20、排序算法：基数排序（支持负数）](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_radix_sort.py)
+[20、搜索算法：利用Trie实现多模字符串的匹配（类AC自动机）](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_ac_with_trie.py)
 
-[21、搜索算法：Dijkstra最短路径算法的另一种python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_dijkstra_another.py)
+[21、排序算法：计数排序（支持负数）](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_counting_sort.py)
 
-[22、数据结构：SkipList跳跃链表的python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_skip_list.py)
+[22、排序算法：基数排序（支持负数）](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_radix_sort.py)
 
-[23、排序算法：桶排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_bucket_sort.py)
+[23、搜索算法：Dijkstra最短路径算法的另一种python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_dijkstra_another.py)
 
-[24、搜索算法：利用python原生库实现bloom过滤器](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_bloom_filter.py)
+[24、数据结构：SkipList跳跃链表的python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_skip_list.py)
 
-[25、搜索算法：利用mmh3+bitarray实现BloomFilter](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_bloom_filter_another.py)
+[25、排序算法：桶排序](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_bucket_sort.py)
 
-[26、数据结构：DoubleArrayTrie双数组前缀树的python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_double_array_trie.py)
+[26、搜索算法：利用python原生库实现bloom过滤器](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_bloom_filter.py)
+
+[27、搜索算法：利用mmh3+bitarray实现BloomFilter](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_bloom_filter_another.py)
+
+[28、数据结构：DoubleArrayTrie双数组前缀树的python实现](https://github.com/dictxwang/python-fragments/blob/main/algorithm/about_double_array_trie.py)
 #### 三、扩展模块相关
 
 [1、folium包的地图应用](https://github.com/dictxwang/python-fragments/blob/main/open_modules/about_folium.py)

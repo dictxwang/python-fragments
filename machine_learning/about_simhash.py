@@ -26,7 +26,7 @@ class SimHash(object):
         key_list = []
         for feature, weight in keywords:
             weight = int(weight * 20)
-            feature = self.string_hash(feature)
+            feature = SimHash.string_hash(feature)
             temp = []
             for f in feature:
                 if f == "1":
@@ -48,7 +48,8 @@ class SimHash(object):
                 simhash += "0"
         return simhash
 
-    def string_hash(self, source):
+    @staticmethod
+    def string_hash(source):
         '''
         自定义的hash算法
         因为自带的hash算法不稳定，会造成汉明计算异常
@@ -69,7 +70,8 @@ class SimHash(object):
             x = bin(x).replace("0b", "").zfill(64)[-64:]
             return str(x)
 
-    def hamming_distance(self, sh1, sh2):
+    @staticmethod
+    def hamming_distance(sh1, sh2):
         distance = 0
         for index, char in enumerate(sh1):
             if char == sh2[index]:
@@ -85,5 +87,5 @@ if __name__ == '__main__':
     sh2 = simhash.sim_hash("李白·唐 举头望明月，低头思故乡。床前明月光，疑似地上霜。")
 
     # 计算汉明距离
-    distance = simhash.hamming_distance(sh1, sh2)  # 距离越小，相似度越高
+    distance = SimHash.hamming_distance(sh1, sh2)  # 距离越小，相似度越高
     print(distance)  # 0
