@@ -4,8 +4,8 @@ __author__ = 'wangqiang'
 
 '''
 算术编码
-    核心思想：依据字符出现概率，将争端文本编码成一个浮点数
-    优势：对比哈夫曼编码，使用的字节数更接近香农信息熵
+    核心思想：依据字符出现概率，将整段文本编码成一个浮点数
+    优势：对比哈夫曼编码，使用的字节数更少，更接近香农信息熵
 '''
 
 import random
@@ -104,8 +104,8 @@ def arithmetic_decoding(coding, char_probability, text_length):
 
 
 if __name__ == '__main__':
-    text = "AABABCABAB"
-    # text = "我爱你我的中国"
+    # text = "AABABCABAB"
+    text = "我爱你我的祖国"
     ac, cp = arithmetic_coding(text)
     print("arithmetic coding: ", ac)
     print("char probability: ", cp)
