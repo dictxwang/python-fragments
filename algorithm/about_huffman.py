@@ -56,10 +56,12 @@ class HuffmanTree:
 
         # 取前两个权重最小的节点
         if len(char_weights[0]) == 3:
+            # 元素是之前生成好的节点，直接引用
             left = char_weights[0][2]
         else:
             left = Node(char_weights[0][0], char_weights[0][1])
         if len(char_weights[1]) == 3:
+            # 元素是之前生成好的节点，直接引用
             right = char_weights[1][2]
         else:
             right = Node(char_weights[1][0], char_weights[1][1])
@@ -72,7 +74,7 @@ class HuffmanTree:
             # 移除已经合并的节点
             del char_weights[0]
             del char_weights[0]
-            # 生成新的节点
+            # 生成新的节点（此时是虚拟节点，因此name为空）
             new_node = Node(None, left.get_value() + right.get_value())
             new_node.set_left(left)
             new_node.set_right(right)
