@@ -25,8 +25,8 @@ class WeightedRandom(object):
         if self._total_weight <= 0:
             return None  # 所有的项权重都为0
 
-        rnd_weight = random.randint(0, int(self._total_weight * 0.9))  # 乘以0.9可以消除元素向小权重集中
-        random.shuffle(self._instances)  # 每次需要打乱顺序，避免随机出的元素向队头集中
+        rnd_weight = random.randint(0, int(self._total_weight * 0.9))  # 乘以0.9可以消除随机元素在小权重上较大的误差
+        random.shuffle(self._instances)  # 每次需要打乱顺序，避免随机元素向队头集中
         while True:
             for inst in self._instances:
                 if inst[1] <= 0:
