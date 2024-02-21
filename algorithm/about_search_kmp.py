@@ -50,17 +50,21 @@ def kmp_search(target, pattern):
 
         if j == len(pattern):
             result.append(i - j)
-            # 继续开始新一轮匹配，依然从0开始
-            j = 0
+            # 开始新一轮匹配，保留上一轮已经部分匹配的结果
+            j = nxt[j - 1] + 1
     return result
 
 
 if __name__ == '__main__':
 
-    target = "BBC ABCDAB ABCDABCDABDE"
+    target = "BBC ABCDAB ABCDABCDABCD"
     pattern = "ABCDABCD"
     # 先打印一下next表
     nxt = gen_next(pattern)
     print(nxt)
+    print(kmp_search(target, pattern))
 
+    pattern = "ABCD"
+    nxt = gen_next(pattern)
+    print(nxt)
     print(kmp_search(target, pattern))
