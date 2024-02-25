@@ -58,7 +58,6 @@ def arithmetic_coding(text):
             post_probability += p
         return result
 
-
     char_original_probability = char_occurrence_probability(text)
     current_interval = None
     coding_result = None
