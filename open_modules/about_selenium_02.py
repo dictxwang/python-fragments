@@ -117,14 +117,14 @@ def use_extension(driver):
     time.sleep(1)
 
     # 循环多页面交互
-    finish_step_3 = False
+    finish_step_3_1 = False
     while True:
         divs = driver.find_elements(by=By.TAG_NAME, value="div")
         step_password = False
         step_begin_bind = False
         step_bind_1 = False
         step_bind_2 = False
-        step_bind_3 = False
+        step_bind_3_1 = False
         step_bind_3_2 = False
 
         for div in divs:
@@ -140,14 +140,14 @@ def use_extension(driver):
             if div.text == "Secret Recovery Phrase":
                 step_bind_2 = True
                 break
-            if div.text == "Address Type" and not finish_step_3:
-                step_bind_3 = True
+            if div.text == "Address Type" and not finish_step_3_1:
+                step_bind_3_1 = True
                 break
             if div.text == "Please be aware that:":
                 step_bind_3_2 = True
                 break
 
-        if not step_password and not step_begin_bind and not step_bind_1 and not step_bind_2 and not step_bind_3 and not step_bind_3_2:
+        if not step_password and not step_begin_bind and not step_bind_1 and not step_bind_2 and not step_bind_3_1 and not step_bind_3_2:
             break
 
         if step_password:
@@ -178,9 +178,9 @@ def use_extension(driver):
                     input.send_keys(words.pop())
             click_div_by_text(driver, "Continue")
 
-        if step_bind_3:
+        if step_bind_3_1:
             click_div_by_text(driver, "Continue")
-            finish_step_3 = True
+            finish_step_3_1 = True
 
         if step_bind_3_2:
             # 这个插件页面的checkout不可点击，直接点击外层的div
